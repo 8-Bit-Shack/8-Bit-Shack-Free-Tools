@@ -1,0 +1,15 @@
+10 REM  DEMO ANIMATION
+15 D$ =  CHR$ (4): HOME
+20 PRINT "                     Double Lores Frameset Animation Player": PRINT
+22 PRINT "                 with MockingBoard support for AppleSoft Basic": PRINT : PRINT
+24 PRINT "                                by 8-Bit-Shack": PRINT : PRINT : PRINT
+30 PRINT "                     Loading animation data and library..."
+40 PRINT D$;"BLOAD SPLASH,A$2000"
+50 PRINT D$;"BLOAD FRAMEANIM,A$7000"
+60 POKE 28672,0: REM  START FRAME 0..10
+70 POKE 28673,4: REM  END FRAME 0..10
+80 POKE 28674,20: REM  SPEED 0..40 (SLOW..FAST)
+90 CALL 36961: REM  START MUSIC PLAYER
+100 CALL 28685: REM  START ANIMATION
+110 CALL 36961: REM  STOP MUSIC PLAYER
+200 END

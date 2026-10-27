@@ -1,0 +1,12 @@
+10 REM  BIG DISKS
+15 &  GR
+20 XC = 20 +  INT (40 *  RND (1))
+30 YC = 14 +  INT (20 *  RND (1))
+40 RA =  INT (40 *  RND (1))
+50 CO =  INT (15 *  RND (1) + 1)
+60 &  COLOR= CO
+70 & CXC,YC,RA,CO,CO - 1
+80 IF  PEEK ( - 16384) > 128 THEN 300
+85 FOR I = 1 TO 200: NEXT I
+90 GOTO 20
+300 &  TEXT : END

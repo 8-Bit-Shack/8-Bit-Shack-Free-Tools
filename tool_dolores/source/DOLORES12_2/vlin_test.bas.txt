@@ -1,0 +1,13 @@
+10 REM  VLIN-TEST
+20 &  GR
+30 X = 15
+40 FOR I = 1 TO 15
+50 &  COLOR= I
+60 &  VLIN 24 - I,24 + I,X
+63 REM  &COLOR = 16 -I
+65 &  VLIN 24 - I,24 + I,76 - X
+70 X = X + 3
+80 NEXT
+90 GET A$
+100 &  TEXT
+110 END

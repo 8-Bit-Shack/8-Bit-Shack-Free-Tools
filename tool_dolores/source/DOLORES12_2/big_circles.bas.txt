@@ -1,0 +1,11 @@
+10 REM  CIRCLES
+15 &  GR
+20 XC = 20 +  INT (40 *  RND (1))
+30 YC = 14 +  INT (20 *  RND (1))
+40 RA =  INT (50 *  RND (1))
+50 CO =  INT (15 *  RND (1) + 1)
+60 &  COLOR= CO
+70 & CXC,YC,RA
+80 IF  PEEK ( - 16384) > 128 THEN 300
+90 GOTO 20
+300 &  TEXT : END

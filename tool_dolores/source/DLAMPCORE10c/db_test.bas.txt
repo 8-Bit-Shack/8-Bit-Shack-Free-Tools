@@ -1,0 +1,13 @@
+5 REM  DOUBLE BUFFER TEST
+10 &  GR
+15 E =  - 16384
+20 &  COLOR=  INT (16 *  RND (1))
+30 & S2: & D1: & H
+32 FOR J = 1 TO 50: &  PLOT  INT (80 *  RND (1)), INT (48 *  RND (1)), INT (16 *  RND (1)): NEXT
+34 &  COLOR=  INT (16 *  RND (1))
+36 & S1: & D2: & H
+38 FOR J = 1 TO 50: &  PLOT  INT (80 *  RND (1)), INT (48 *  RND (1)), INT (16 *  RND (1)): NEXT
+39 IF  PEEK (E) > 128 THEN 100
+40 GOTO 20
+100 &  TEXT
+110 END

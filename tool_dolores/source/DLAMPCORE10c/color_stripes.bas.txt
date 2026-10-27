@@ -1,0 +1,11 @@
+10 &  GR
+15 X = 2
+20 FOR CO = 1 TO 15
+30 &  COLOR= CO
+35 X = X + 3
+40 FOR I = 2 TO 40
+50 &  PLOT X,I
+60 NEXT : NEXT
+70 GET A$
+80 &  TEXT
+90 END

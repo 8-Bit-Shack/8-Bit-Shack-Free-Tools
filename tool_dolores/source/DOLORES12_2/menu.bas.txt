@@ -1,0 +1,42 @@
+10 D$ =  CHR$ (4)
+20 PRINT  CHR$ (21): HOME : POKE 49168,0
+30 VTAB 1: HTAB 7: PRINT "Dolores GRaphics System 2021"
+40 VTAB 2: HTAB 7: PRINT "============================"
+50 VTAB 3: HTAB 7: PRINT "M a r c    G o l o m b e c k"
+60 VTAB 8: HTAB 7: PRINT "(1) Load a Demo"
+70 VTAB 11: HTAB 7: PRINT "(2) Sprite Maker"
+80 VTAB 14: HTAB 7: PRINT "(3) About Dolores"
+90 VTAB 17: HTAB 7: PRINT "(4) Quit - System Installed"
+100 IF  PEEK ( - 16384) > 127 THEN  GET A$: POKE 49168,0: GOTO 120
+110 GOTO 100
+120 IF A$ = "1" THEN  GOTO 400
+130 IF A$ = "2" THEN  HOME : PRINT "Loading Sprite Maker": PRINT D$;"RUN SPRITE.MAKER"
+140 IF A$ = "3" THEN  GOTO 200
+150 IF A$ = "4" THEN  HOME : PRINT "Dolores 12.1 Installed": END
+160 GOTO 100
+200 REM   ABOUT DOLORES
+210 PRINT : PRINT D$;"PR#3": HOME : PRINT "About Dolores...": PRINT : PRINT
+220 PRINT "From the Apple IIe enhanced onwards a double LORES mode with 80 X 48 pixels in  16 colours was made available. Documentation on this mode is rather sparse and  ways to access it are fairly complicated for Applesoft programmers"
+230 PRINT : PRINT "IF you are the lucky owner of an Apple IIc or IIgs things are easier: with some POKE commands the double LORES mode can be activated and then standard PLOT     commands from Applesoft can be used for drawing"
+250 PRINT : PRINT "The Double LORES mode was always a great attaction to me and I wanted to write  my own tools in order to access this 'hidden' mode. After some initial"
+260 PRINT "experiments I was motivated by some fellow Apple II enthusiasts to create a     library that makes use of the Applesoft &-feature (Ampersand) which enables     an easy link from Applesoft Basic to machine code routines"
+270 PRINT : PRINT "The result is a complete ampersand-library with enables easy access to Applesoftdouble LORES graphics routines using the &-command"
+280 PRINT : PRINT "For technical reference and instructions visit... http://golombeck.eu"
+290 PRINT : PRINT  TAB( 28)"PRESS ANY KEY TO CONTINUE"
+300 IF  PEEK ( - 16384) > 127 THEN  POKE 49168,0: GOTO 20
+310 GOTO 300
+400 REM  DEMOS
+410 HOME
+420 PRINT : PRINT D$;"PR#3"
+430 VTAB 1: HTAB 34: PRINT "Demo Programs"
+440 VTAB 2: HTAB 34: PRINT "============="
+450 DIM NM$(29): FOR X = 1 TO 29: READ NM$(X): NEXT X
+460 FOR X = 1 TO 15: VTAB 4 + X: HTAB 16: PRINT X;: HTAB 21: PRINT NM$(X): NEXT X
+470 FOR X = 16 TO 29: VTAB 4 + (X - 15): HTAB 46: PRINT X;: HTAB 51: PRINT NM$(X): NEXT X
+480 VTAB 22: HTAB 16: INPUT "Enter selection + RETURN :";S
+490 IF S < 1 OR S > 29 THEN  VTAB 22: HTAB 42: CALL  - 868: GOTO 480
+500 VTAB 22: HTAB 16: CALL  - 868: PRINT "Loading ";NM$(S);"..."
+510 PRINT D$;"RUN ";NM$(S)
+1000 DATA "DEMO","KALEIDOSCOPE","TWO BIG CICLES","COLOR STRIPES","VLIN-TEST","HLIN-TEST","MOVE-DEMO","FILL-TEST","FILL-DEMO","DB-TEST","PRINT-TEST","MIXTEST"
+1010 DATA "BEAGLE BROS TRIBUTE","LINEPLOT","LINEPLOT2","LINEPLOT3","LINEPLOT4","MARC'S THEME","CIRCLE-DEMO","PULSAR","GET-TEST","BIG CIRCLES","BIG DISKS"
+1020 DATA "RECT-TEST","MIXED MODE","SPRITE-TEST2","SPRITE-TEST3","SPRITE-TEST5","TESTICLES"
